@@ -5,5 +5,7 @@ footer{
     justify-content: center;
     align-items: center;
     width: 70vw;
+    font-size: 2rem;
+    color: white;
     background-color: var(--color-granite);
 }

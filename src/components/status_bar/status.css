@@ -1,24 +1,29 @@
 .status_wrap{
     width: 70vw;
+    height: 8rem;
     padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    gap:1rem;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 1fr 1fr;
     margin-block: 1rem;
 }
 
-.all_entries, .favourites, .date{
+.all_entries, .favourites{
     font-size: 1.4rem;
     font-weight: bolder;
     letter-spacing: 0.6rem;
 }
+.all_entries, .favourites{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .all_entries{
-   color: var(--color-granite)
+    grid-area: 1/ 2/ 1/ 2;
+    color: var(--color-granite)
 }
 .favourites{
+    grid-area: 1/ 1/ 1/ 1;
     color: var(--color-nemo)
-}
-.date{
-    color: black;
 }

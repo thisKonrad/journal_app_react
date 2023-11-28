@@ -1,13 +1,12 @@
 .card{
     display: grid;
-    grid-template-columns: 0.5fr 2fr 2fr 0.5fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    width: 30rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows:  0.225fr 0.225fr 2.5fr 2.25fr;
+    width: 65vw;
     height: 20rem;
     text-wrap: wrap;
-    padding: 0.5rem;
+    padding: 1rem;
     font-size: 1.2rem;
-    border: 1px solid rgba(0, 0, 0, 0.6);
     border-radius: 8px;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
 }
@@ -17,16 +16,31 @@
     align-items: center;
     flex-direction: column;
     gap: 2rem;
+    text-wrap: wrap;
     margin-top: 4rem;
 }
-h3{
-    grid-area: 1/ 2/ 1/ 4;
-    margin: 1rem;
+.date{
+    grid-area: 1/ 1/ 1/ 5;
+    display: flex;
+    justify-content: center;
+    width: 400%;
+    color: black;
 }
 .card_icon{
-    grid-area: 1/ 4/ 1/ 4;
-    margin: 0.6rem;
+    grid-area: 2/ 4/ 2/ 5;
+    margin-left: 50%;
 }
+h3{
+    grid-area: 2/ 1/ 2/ 4;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
 article{
-    grid-area: 2/ 2/ 4/ 4;
+    grid-area: 3/ 1/ 5/ 4;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    text-align:justify;
 }
