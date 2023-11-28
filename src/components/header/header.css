@@ -1,5 +1,12 @@
 h1{
     font-size: 4rem;
     color: white;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
     background-color: darkseagreen;
 }

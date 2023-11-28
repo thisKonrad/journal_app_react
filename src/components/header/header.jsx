@@ -2,10 +2,11 @@ import './header.css'
 
 export default function Header(){
 
-    return <>
+    return( <>
             <header>
                 <h1>Journal</h1>
             </header>
         </>
+    )
 
 }
