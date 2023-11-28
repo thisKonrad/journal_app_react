@@ -1,0 +1,22 @@
+.status_wrap{
+    width: 70vw;
+    margin: 0.45rem;
+    padding: 1rem;
+}
+
+.all_entries, .favourites, .date{
+    font-size: 1.4rem;
+    font-weight: bolder;
+    letter-spacing: 0.6rem;
+}
+
+.all_entries{
+   color: var(--color-granite)
+}
+.favourites{
+    color: var(--color-nemo)
+}
+
+.date{
+    color: black;
+}
