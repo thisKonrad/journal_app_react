@@ -4,12 +4,16 @@
 import './App.css'
 import './colors.css'
 import Header from '../src/components/header/header.jsx';
+import NewEntry from '../src/components/header/new_entry.jsx';
+
 
 function App() {
  
   return (
     <>
-    <Header/>
+      <Header>
+        <NewEntry/>
+      </Header>
     </>
   )
 }

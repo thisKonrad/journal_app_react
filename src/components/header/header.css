@@ -1,4 +1,4 @@
-h1{
+h1, .new_Entry{
     font-size: 4rem;
     color: white;
 }
@@ -9,4 +9,10 @@ header{
     align-items: center;
     padding: 1rem;
     background-color: darkseagreen;
+}
+
+.new_Entry{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
