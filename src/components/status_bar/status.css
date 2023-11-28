@@ -2,6 +2,10 @@
     width: 70vw;
     margin: 0.45rem;
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap:1rem;
+    margin-block: 1rem;
 }
 
 .all_entries, .favourites, .date{

@@ -1,0 +1,30 @@
+.card{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 2fr 0.5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    width: 30rem;
+    height: 20rem;
+    text-wrap: wrap;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+}
+.card_wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+h3{
+    grid-area: 1/ 2/ 1/ 4;
+    margin: 1rem;
+}
+.card_icon{
+    grid-area: 1/ 4/ 1/ 4;
+    margin: 0.6rem;
+}
+article{
+    grid-area: 2/ 2/ 4/ 4;
+}
