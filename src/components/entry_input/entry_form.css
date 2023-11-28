@@ -1,6 +1,13 @@
 .entry_form{
     display:flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
-    width: 42rem;
+    gap: 4rem;
+    min-width: 70vw;
+    margin-bottom: 1.4rem;
+    padding: 4rem;
+    border: 0.1rem solid rgba(196, 196, 196, 0.25);
+    border-radius: 0.6rem;
+    background-color: rgba(196, 196, 196, 0.25);
 }
