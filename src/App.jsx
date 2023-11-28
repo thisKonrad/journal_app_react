@@ -15,7 +15,7 @@ import EntryForm from '../src/components/entry_input/entry_form.jsx';
 function App() {
  
   return (<>
-  
+
     <Header/>
     <Main>
       <EntryForm>
@@ -23,6 +23,7 @@ function App() {
         <Notes/>
         <Button/>
       </EntryForm>
+      
     </Main>
     <>
     <Footer/>
