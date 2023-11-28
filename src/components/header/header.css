@@ -4,10 +4,13 @@ h1, .new_Entry{
 }
 
 header{
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    width: 70vw;
     background-color: var(--color-water-10);
 }
 

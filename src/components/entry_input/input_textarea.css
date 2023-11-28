@@ -1,0 +1,16 @@
+.input_text{
+    display: flex;
+    width: 32rem;
+}
+
+#motto, #notes{
+    resize: none;
+    width: 32rem;
+    height: 60%;
+    font-size: 1.2rem;
+    border-radius: 0.25rem;
+    margin: 1rem;
+    padding: 0.12rem;
+    border: 0.4rem solid var(--color-granite);
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.3);
+}
