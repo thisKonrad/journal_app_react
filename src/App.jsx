@@ -9,6 +9,8 @@ import Footer from '../src/components/footer/footer.jsx';
 import Motto from '../src/components/entry_input/motto.jsx';
 import Notes from '../src/components/entry_input/notes.jsx';
 import Button from '../src/components/buttons/buttons.jsx';
+import EntryForm from '../src/components/entry_input/entry_form.jsx';
+
 
 function App() {
  
@@ -16,9 +18,12 @@ function App() {
     <Header>
       <NewEntry/>
     </Header>
-    <Motto/>
-    <Notes/>
-    <Button/>
+    <EntryForm>
+      <Motto/>
+      <Notes/>
+      <Button/>
+    </EntryForm>
+ 
     <>
     <Footer/>
     </>
