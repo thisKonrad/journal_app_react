@@ -5,17 +5,21 @@ import './App.css'
 import './colors.css'
 import Header from '../src/components/header/header.jsx';
 import NewEntry from '../src/components/header/new_entry.jsx';
+import Footer from '../src/components/footer/footer.jsx';
 
 
 function App() {
  
-  return (
-    <>
+  return (<>
       <Header>
         <NewEntry/>
       </Header>
+
+    <>
+    <Footer/>
     </>
-  )
+
+  </>)
 }
 
 export default App

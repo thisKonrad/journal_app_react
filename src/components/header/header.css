@@ -8,7 +8,7 @@ header{
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background-color: darkseagreen;
+    background-color: var(--color-water-10);
 }
 
 .new_Entry{
