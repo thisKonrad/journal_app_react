@@ -1,0 +1,17 @@
+.count_fav, .count_all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.4rem;
+    height: 2.4rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: white;
+}
+.count_fav{
+    background-color: var(--color-nemo);
+}
+.count_all{
+    background-color: var(--color-granite);
+}

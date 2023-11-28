@@ -1,0 +1,12 @@
+.entry_form{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+    min-width: 65vw;
+    margin-bottom: 1.4rem;
+    padding: 4rem;
+    border-radius: 0.6rem;
+    background-color: rgba(196, 196, 196, 0.1);
+}
