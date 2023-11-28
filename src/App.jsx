@@ -38,8 +38,10 @@ function App() {
         <AllEntries/>
         <Date/>
       </StatusWrap>
-      
+
       <CardWrap>
+        <Card/>
+        <Card/>
         <Card/>
       </CardWrap>
   

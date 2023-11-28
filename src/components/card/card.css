@@ -15,7 +15,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     gap: 2rem;
+    margin-top: 4rem;
 }
 h3{
     grid-area: 1/ 2/ 1/ 4;

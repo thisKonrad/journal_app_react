@@ -5,7 +5,7 @@ import CountAll from '../counters/countAll.jsx';
 export default function AllEntries(){
 
     return( <>
-           <p className="all_entries">all entries:<span>{CountAll}</span></p>
+        <div><p className="all_entries">all entries: </p>{CountAll}</div>   
         </>
     )
 

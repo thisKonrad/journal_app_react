@@ -6,15 +6,6 @@
 }
  
 body{
-/* width: 100%;
-min-height: 100vh;
-margin: 0em auto;
-padding: 0.5rem;
-background: whitesmoke;
-display:flex;
-justify-content: center;
-align-items: center; */
-
 position: relative;
 display: flex;
 justify-content: center;
