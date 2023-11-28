@@ -6,3 +6,10 @@
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
     background-color: var(--color-nemo);
 }
+button:hover{
+    transform: scale(1.1);
+    background-color: var(--color-nemo-mid);
+}
+button:active{
+    background-color: var(--color-nemo-dark);
+}
