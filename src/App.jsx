@@ -10,6 +10,7 @@ import Motto from '../src/components/entry_input/motto.jsx';
 import Notes from '../src/components/entry_input/notes.jsx';
 import Button from '../src/components/buttons/buttons.jsx';
 import EntryForm from '../src/components/entry_input/entry_form.jsx';
+import EntryFormHeadline from '../src/components/entry_input/headline.jsx';
 import StatusWrap from '../src/components/status_bar/status_wrap.jsx';
 import AllEntries from '../src/components/status_bar/all_entries.jsx';
 import Favourites from '../src/components/status_bar/favourites.jsx';
@@ -23,10 +24,11 @@ function App() {
   return (<>
 
     <Header/>
-
+  
     <MainWrap>
 
       <EntryForm>
+        <EntryFormHeadline/>
         <Motto/>
         <Notes/>
         <Button/>
