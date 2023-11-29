@@ -10,3 +10,12 @@
     border-radius: 0.6rem;
     background-color: rgba(196, 196, 196, 0.1);
 }
+
+.new_entry{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    font-size: 2rem;
+}
