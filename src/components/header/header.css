@@ -17,12 +17,3 @@ header{
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
     background-color: var(--color-water-10);
 }
-
-.new_entry{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    width: 100%;
-    background-color: whitesmoke;
-}
