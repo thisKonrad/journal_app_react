@@ -1,25 +1,30 @@
 import './entry_form.css'
+import EntryFormHeadline from '../src/components/entry_input/headline.jsx';
+import Motto from '../src/components/entry_input/motto.jsx';
+import Notes from '../src/components/entry_input/notes.jsx';
+import Button from '../src/components/buttons/buttons.jsx';
 import { useState } from "react";
 
 
-export default function EntryForm({children}){
+export default function EntryForm(){
 
     const[motto, setMotto]=useState('');
-    const[note, setNotes]=useState('');
-
-    function getFormValues(event){
-
-        event.preventDefault()
-
-        const mottoValue = event.target.elements.motto.value;
-        const noteValue = event.target.elements.notes.value;
+    const[note, setNote]=useState('');
+  
+    function handleCreateMotto(motto){
+      setMotto(motto)
     }
-
-
-
+    function handleCreateNote(note){
+        setNote(note)
+    }
+  
     return( <>
              <form className="entry_form">
-                {children}
+               {/*  {children} */}
+                <EntryFormHeadline/>
+                <Motto eventHandle={handleCreateMotto}/>
+                <Notes eventHandle={handleCreateNote}/>
+                <Button/>
              </form>
         </>
     )

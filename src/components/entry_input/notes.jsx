@@ -1,7 +1,20 @@
 import './input_textarea.css'
 
-export default function Notes(){
+export default function Notes({eventHandle}){
 
+    function handleSubmit(event) {
+
+        event.preventDefault();
+    
+        const noteValue = event.target.elements.note.value;
+        console.log('note: ',noteValue)
+    
+        eventHandle(noteValue)
+
+        event.target.reset();
+    
+    }
+    
     return( <>
              <section className="input_text">
                 <label htmlFor="notes">Notes:</label>
