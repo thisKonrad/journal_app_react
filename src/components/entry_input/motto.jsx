@@ -7,7 +7,8 @@ export default function Motto({getInput}){
 
     event.preventDefault();
 
-    const mottoValue = event.target.elements.motto.value;
+    const mottoValue = event.target.value;
+
     console.log('motto: ',mottoValue)
 
     getInput(mottoValue)
@@ -21,7 +22,12 @@ export default function Motto({getInput}){
     return( <>
              <section className="input_text">
                 <label htmlFor="motto">Motto:</label>
-                <textarea id="motto" onChange={mottoInput} rows="6" cols="6" maxLength="220"></textarea>
+                <textarea 
+                id="motto" 
+                onChange={mottoInput} 
+                rows="6" cols="6" 
+                maxLength="220">
+                </textarea>
             </section>
         </>
     )
