@@ -1,13 +1,16 @@
-import './button.css'
+import './button.css';
 
-export default function Button(){
+
+export default function Button({sendValues}){
+
 
     function submitForm(event) {
 
         event.preventDefault();
 
         console.log('Clicked!')
-    
+
+        sendValues()
     }
 
     return( <>

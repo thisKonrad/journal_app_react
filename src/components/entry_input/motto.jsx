@@ -8,7 +8,6 @@ export default function Motto({getInput}){
     event.preventDefault();
 
     const mottoValue = event.target.value;
-
     console.log('motto: ',mottoValue)
 
     getInput(mottoValue)
@@ -17,7 +16,6 @@ export default function Motto({getInput}){
     event.target.reset();
 
   }
-
 
     return( <>
              <section className="input_text">

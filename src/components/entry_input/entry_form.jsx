@@ -17,17 +17,22 @@ export default function EntryForm(){
     function handleCreateNote(note){
         setNote(note)
     }
+
+    function submitFormValues(){
+        setMotto(motto)
+        setNote(note)
+        console.log("Values: ",motto," ",note)
+    }
   
     console.log("motto: ",motto)
     console.log("note: ", note)
-    
+
     return( <>
              <form className="entry_form">
-               {/*  {children} */}
                 <EntryFormHeadline/>
                 <Motto getInput={handleCreateMotto}/>
                 <Notes getInput={handleCreateNote}/>
-                <Button/>
+                <Button sendValues={submitFormValues}/>
              </form>
         </>
     )
