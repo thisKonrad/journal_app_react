@@ -1,11 +1,29 @@
 import './input_textarea.css'
 
-export default function Notes(){
+export default function Notes({getInput}){
 
+    function noteInput(event) {
+
+        event.preventDefault();
+    
+        const noteValue = event.target.value;
+        console.log('note: ',noteValue)
+    
+        getInput(noteValue)
+
+        event.target.reset();
+    
+    }
+    
     return( <>
              <section className="input_text">
-                <label htmlFor="motto">Notes:</label>
-                <textarea id="motto" rows="6" cols="6" maxLength="220"></textarea>
+                <label htmlFor="notes">Notes:</label>
+                <textarea 
+                id="notes" 
+                onChange={noteInput} 
+                rows="6" cols="6" maxLength="220"
+                >
+                </textarea>
             </section>
         </>
     )
