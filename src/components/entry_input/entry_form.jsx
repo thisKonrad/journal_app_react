@@ -22,8 +22,8 @@ export default function EntryForm(){
              <form className="entry_form">
                {/*  {children} */}
                 <EntryFormHeadline/>
-                <Motto eventHandle={handleCreateMotto}/>
-                <Notes eventHandle={handleCreateNote}/>
+                <Motto getInput={handleCreateMotto}/>
+                <Notes getInput={handleCreateNote}/>
                 <Button/>
              </form>
         </>

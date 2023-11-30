@@ -1,15 +1,15 @@
 import './input_textarea.css'
 
-export default function Notes({eventHandle}){
+export default function Notes({getInput}){
 
-    function handleSubmit(event) {
+    function noteInput(event) {
 
         event.preventDefault();
     
         const noteValue = event.target.elements.note.value;
         console.log('note: ',noteValue)
     
-        eventHandle(noteValue)
+        getInput(noteValue)
 
         event.target.reset();
     
@@ -18,7 +18,7 @@ export default function Notes({eventHandle}){
     return( <>
              <section className="input_text">
                 <label htmlFor="notes">Notes:</label>
-                <textarea id="notes" rows="6" cols="6" maxLength="220"></textarea>
+                <textarea id="notes" onChange={noteInput} rows="6" cols="6" maxLength="220"></textarea>
             </section>
         </>
     )

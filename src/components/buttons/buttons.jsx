@@ -8,7 +8,6 @@ export default function Button(){
 
         console.log('Clicked!')
     
-    
     }
 
     return( <>
