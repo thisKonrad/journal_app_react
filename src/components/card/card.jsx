@@ -10,7 +10,7 @@ export default function Card(){
                 <h3>"Thats life in the City"</h3>
                 <article>
                     <p>
-                    In The City There are Dremaers,
+                    In The City There are unfullfilled Dreams,
                     struggling Thiefs. Bad People. Beware..there are some 
                     genius, animals. Howw gonna hunt them?
                     Nooar you damm , go back to the countryside...

@@ -1,9 +1,14 @@
-import './entry_form.css'
+import './entry_form.css';
 import EntryFormHeadline from './headline.jsx';
 import Motto from './motto.jsx';
 import Notes from './notes.jsx';
 import Button from '../buttons/buttons.jsx';
+
+
+import { createPortal } from 'react-dom';
+
 import { useState } from "react";
+
 
 
 export default function EntryForm(){
@@ -19,13 +24,28 @@ export default function EntryForm(){
     }
 
     function submitFormValues(){
+        
+        const date =  new Date().toLocaleDateString();
         setMotto(motto)
         setNote(note)
+        console.log(date)
         console.log("Values: ",motto," ",note)
+
+        {createPortal(
+            <div className="card">
+            <img className ="card_icon" src="../assets/star.svg"></img>
+            <div><p className="date">date: <span>{date}</span></p></div>
+            <h3>{motto}</h3>
+            <article>
+                <p>
+                {note}
+                </p>
+            </article>
+            </div>,
+            document.querySelector('.card_wrap')
+        )}
     }
-  
-    console.log("motto: ",motto)
-    console.log("note: ", note)
+
 
     return( <>
              <form className="entry_form">
