@@ -5,7 +5,7 @@ export default function Card(){
 
     return( <>
             <div className="card">
-                <img className ="card_icon" src="../assets/star-filled.svg"></img>
+                <img className ="card_icon" src="../assets/star.svg"></img>
                 <div><p className="date">date: <span>februar 04 25</span></p></div>
                 <h3>"Thats life in the City"</h3>
                 <article>
