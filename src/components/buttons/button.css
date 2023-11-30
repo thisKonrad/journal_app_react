@@ -3,17 +3,18 @@
     height: 4rem;
     cursor: pointer;
     padding: 0.4rem;
+    font-family: 'typewriter',monospace;
     font-size: 1.4rem;
     font-weight: 900;
     color:white;
-    text-shadow:1px 1px 1px darkmagenta;
+    text-shadow:1px 1px 1px rgb(199, 0, 0);
     border-radius: 6px;
     border:initial;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
     background-color: var(--color-nemo);
 }
 button:hover{
-    transform: scale(1.1);
+    transform: scale(1.01);
     background-color: var(--color-nemo-mid);
 }
 button:active{
