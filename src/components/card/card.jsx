@@ -1,14 +1,22 @@
-import './card.css'
+import './card.css';
+import {useState} from 'react';
 
-//{text},{star}
+
 export default function Card({
-    motto, 
     date,
+    motto,
     note
 }){
+    const [toggle, setToggle] = useState(true)
 
     return(<li className="card">
-                <img className ="card_icon" src="../assets/star.svg"></img>
+                <button   
+                className ="card_icon"
+                onClick={()=> setToggle((current)=>!current)}>
+                { toggle ?    <img src='../assets/star.svg'></img> :
+                <img src='../assets/star-filled.svg'></img> 
+                }
+                </button>
                 <div><p className="date">date: <span>{date}</span></p></div>
                 <h3>{motto}</h3>
                 <article>

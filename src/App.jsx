@@ -10,14 +10,18 @@ import CardWrap from '../src/components/card/card_wrap.jsx';
 
 import Footer from '../src/components/footer/footer.jsx';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 
 function App() {
+
+  let idTag = uuidv4();
 
   const[motto, setMotto]= useState('');
   const[note, setNote]= useState('');
   const[date, setDate]= useState('');
   const[cards,setCards]= useState([]);
+
 
   function handleCard(card){
     setCards((cards)=> [...cards, card])
@@ -26,47 +30,49 @@ function App() {
   function handleMotto(event) {
 
     event.preventDefault();
-    const noteValue = event.target.value;
-    console.log('note: ',noteValue)
+    let mottoValue = event.target.value;
+    console.log('note: ',mottoValue)
 
-    setMotto(noteValue)
+    setMotto(mottoValue)
   } 
 
   function handleNote(event) {
 
     event.preventDefault();
-    const noteValue = event.target.value;
+    let noteValue = event.target.value;
     console.log('note: ',noteValue)
 
     setNote(noteValue)
-  } 
+  }
 
   function handleSubmit(event){
       event.preventDefault()
 
       if(!motto || !note){return}
 
-      const date =  new Date().toLocaleDateString();
-      setDate(date)
+      setDate(new Date().toLocaleDateString())
+     
       console.log(date)
-      console.log("Values: ",motto," ",note)
+      console.log("Values: ",motto," ",note, " ",date)
 
       const newCard = [{
         date,
         motto,
         note,
-        id: Date.now(),
+        id: idTag,
         favourite: false,
         }
       ];
 
       handleCard(newCard)
 
-      event.target.elements.motto.focus();
+      console.log(idTag)
 
-    /*   setMotto('')
+     /*  setMotto('')
       setNote('') */
+      event.target.elements.motto.focus();
   }
+
  
   return (<>
 
@@ -85,12 +91,10 @@ function App() {
         <AllEntries/>
       </StatusWrap>
 
-      <CardWrap cards={cards}>
-        {/* <Card  
-        motto={motto} 
-        note={note}
-        date={date}
-        /> */}
+      <CardWrap 
+      cards={cards}
+      motto={motto}
+      note={note}>
       </CardWrap>
     </MainWrap>
     <Footer/>

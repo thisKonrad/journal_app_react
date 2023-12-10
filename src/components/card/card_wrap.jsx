@@ -1,7 +1,11 @@
 import './card.css'
 import Card from './card.jsx';
 
-export default function CardWrap({cards}){
+export default function CardWrap({
+    cards,
+    date,
+    motto,
+    note}){
 
     return( <>
             <section className="card_wrap">
@@ -9,7 +13,10 @@ export default function CardWrap({cards}){
                 {cards.map((card)=> 
                 <Card
                     key ={card.id} 
-                    card={card}/>)} 
+                    card={card}
+                    date={date}
+                    motto={motto}
+                    note={note}/>)} 
                 </ul>
             </section>
         </>
