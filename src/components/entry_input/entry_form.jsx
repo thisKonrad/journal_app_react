@@ -1,59 +1,47 @@
 import './entry_form.css';
-import EntryFormHeadline from './headline.jsx';
-import Motto from './motto.jsx';
-import Notes from './notes.jsx';
-import Button from '../buttons/buttons.jsx';
+import './input_textarea.css';
+import '../buttons/button.css';
 
+export default function EntryForm({
+    handleSubmit,
+    motto,
+    handleMotto,
+    note,
+    handleNote 
+    }) {
 
-import { createPortal } from 'react-dom';
-
-import { useState } from "react";
-
-
-
-export default function EntryForm(){
-
-    const[motto, setMotto]=useState('');
-    const[note, setNote]=useState('');
-  
-    function handleCreateMotto(motto){
-        setMotto(motto)
-    }
-    function handleCreateNote(note){
-        setNote(note)
-    }
-
-    function submitFormValues(){
-        
-        const date =  new Date().toLocaleDateString();
-        setMotto(motto)
-        setNote(note)
-        console.log(date)
-        console.log("Values: ",motto," ",note)
-
-        {createPortal(
-            <div className="card">
-            <img className ="card_icon" src="../assets/star.svg"></img>
-            <div><p className="date">date: <span>{date}</span></p></div>
-            <h3>{motto}</h3>
-            <article>
-                <p>
-                {note}
-                </p>
-            </article>
-            </div>,
-            document.querySelector('.card_wrap')
-        )}
-    }
-
-
-    return( <>
-             <form className="entry_form">
-                <EntryFormHeadline/>
-                <Motto getInput={handleCreateMotto}/>
-                <Notes getInput={handleCreateNote}/>
-                <Button sendValues={submitFormValues}/>
-             </form>
-        </>
-    )
+    return(<form 
+             className="entry_form"
+             onSubmit={handleSubmit}>
+                <div>
+                    <p className="new_entry">New Entry:</p>
+                </div>
+                <div className="input_text">
+                    <label htmlFor="motto">Motto:</label>
+                    <textarea 
+                    name="motto"
+                    id="motto" 
+                    value={motto}
+                    onChange={handleMotto} 
+                    rows="6" cols="6" 
+                    maxLength="220">
+                </textarea>
+                </div>
+                <div className="input_text">
+                    <label htmlFor="notes">Notes:</label>
+                    <textarea 
+                    name="notes"
+                    id="notes" 
+                    value={note}
+                    onChange={handleNote} 
+                    rows="6" cols="6" 
+                    maxLength="220">
+                    </textarea>
+                </div>
+                <button 
+                name="submit_button"
+                className="submitBtn">
+                    Create
+                </button>
+             </form>)
 }

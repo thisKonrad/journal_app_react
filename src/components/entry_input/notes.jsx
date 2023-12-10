@@ -1,6 +1,7 @@
-import './input_textarea.css'
+/* import './input_textarea.css'
 
-export default function Notes({getInput}){
+
+export default function Notes({getNote}){
 
     function noteInput(event) {
 
@@ -28,4 +29,4 @@ export default function Notes({getInput}){
         </>
     )
 
-}
+} */

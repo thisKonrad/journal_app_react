@@ -1,21 +1,9 @@
-import './input_textarea.css'
+//import './input_textarea.css'
 
+/* 
+export default function Motto({getMotto, mottoInput}){
 
-export default function Motto({getInput}){
-
-  function mottoInput(event) {
-
-    event.preventDefault();
-
-    const mottoValue = event.target.value;
-    console.log('motto: ',mottoValue)
-
-    getInput(mottoValue)
-
-    event.target.elements.motto.focus();
-    event.target.reset();
-
-  }
+ 
 
     return( <>
              <section className="input_text">
@@ -30,4 +18,4 @@ export default function Motto({getInput}){
         </>
     )
 
-}
+} */

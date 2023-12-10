@@ -1,23 +1,30 @@
-import './card.css'
+import './card.css';
+import {useState} from 'react';
 
-//{text},{star}
-export default function Card(){
 
-    return( <>
-            <div className="card">
-                <img className ="card_icon" src="../assets/star.svg"></img>
-                <div><p className="date">date: <span>februar 04 25</span></p></div>
-                <h3>"Thats life in the City"</h3>
+export default function Card({
+    card
+    /* date,
+    motto,
+    note */
+}){
+    const [toggle, setToggle] = useState(true)
+
+    return(<li className="card">
+                <button   
+                className ="card_icon"
+                onClick={()=> setToggle((current)=>!current)}>
+                { toggle ? <img src='../assets/star.svg'></img> :
+                <img src='../assets/star-filled.svg'></img> 
+                }
+                </button>
+                <div><p className="date">date: <span>{card.date}</span></p></div>
+                <h3>{card.motto}</h3>
                 <article>
                     <p>
-                    In The City There are unfullfilled Dreams,
-                    struggling Thiefs. Bad People. Beware..there are some 
-                    genius, animals. Howw gonna hunt them?
-                    Nooar you damm , go back to the countryside...
+                    {card.note}
                     </p>
                 </article>
-            </div>
-        </>
-    )
+            </li>)
 
 }

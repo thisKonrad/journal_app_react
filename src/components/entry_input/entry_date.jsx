@@ -1,4 +1,4 @@
-
+/* 
 export default function DateOfNote(){
 
     return( <>
@@ -10,4 +10,4 @@ export default function DateOfNote(){
         </>
     )
 
-}
+} */
