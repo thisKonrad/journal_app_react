@@ -10,7 +10,7 @@ export default function EntryForm({
     handleNote 
     }) {
 
-    return( <section>
+    return(<section>
              <form 
              className="entry_form"
              onSubmit={handleSubmit}>

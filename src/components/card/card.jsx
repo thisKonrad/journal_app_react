@@ -3,9 +3,10 @@ import {useState} from 'react';
 
 
 export default function Card({
-    date,
+    card
+    /* date,
     motto,
-    note
+    note */
 }){
     const [toggle, setToggle] = useState(true)
 
@@ -17,11 +18,11 @@ export default function Card({
                 <img src='../assets/star-filled.svg'></img> 
                 }
                 </button>
-                <div><p className="date">date: <span>{date}</span></p></div>
-                <h3>{motto}</h3>
+                <div><p className="date">date: <span>{card.date}</span></p></div>
+                <h3>{card.motto}</h3>
                 <article>
                     <p>
-                    {note}
+                    {card.note}
                     </p>
                 </article>
             </li>)

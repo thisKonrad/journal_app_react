@@ -2,21 +2,16 @@ import './card.css'
 import Card from './card.jsx';
 
 export default function CardWrap({
-    cards,
-    date,
+    cards
+/*     date,
     motto,
-    note}){
+    note */}){
 
     return( <>
             <section className="card_wrap">
                 <ul>
                 {cards.map((card)=> 
-                <Card
-                    key ={card.id} 
-                    card={card}
-                    date={date}
-                    motto={motto}
-                    note={note}/>)} 
+                <Card key={card.id} card={card}/>)} 
                 </ul>
             </section>
         </>

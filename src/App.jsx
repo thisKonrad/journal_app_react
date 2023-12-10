@@ -56,9 +56,9 @@ function App() {
       console.log("Values: ",motto," ",note, " ",date)
 
       const newCard = [{
-        date,
-        motto,
-        note,
+        date:date,
+        motto:motto,
+        note:note,
         id: idTag,
         favourite: false,
         }
@@ -91,10 +91,10 @@ function App() {
         <AllEntries/>
       </StatusWrap>
 
-      <CardWrap 
-      cards={cards}
+      <CardWrap cards={cards}
+     /*  cards={cards}
       motto={motto}
-      note={note}>
+      note={note} */>
       </CardWrap>
     </MainWrap>
     <Footer/>
