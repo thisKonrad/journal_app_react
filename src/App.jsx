@@ -7,7 +7,7 @@ import StatusWrap from '../src/components/status_bar/status_wrap.jsx';
 import AllEntries from '../src/components/status_bar/all_entries.jsx';
 import Favourites from '../src/components/status_bar/favourites.jsx';
 import CardWrap from '../src/components/card/card_wrap.jsx';
-import Card from '../src/components/card/card.jsx';
+
 import Footer from '../src/components/footer/footer.jsx';
 import { useState } from 'react';
 
@@ -17,7 +17,11 @@ function App() {
   const[motto, setMotto]= useState('');
   const[note, setNote]= useState('');
   const[date, setDate]= useState('');
-  const[card,setCard]= useState([]);
+  const[cards,setCards]= useState([]);
+
+  function handleCard(){
+    setCards((cards)=> [...cards, card])
+  }
 
   function handleMotto(event) {
 
@@ -42,13 +46,28 @@ function App() {
   function handleSubmit(event){
       event.preventDefault()
 
+      if(!motto || !note){return}
+
       const date =  new Date().toLocaleDateString();
       setDate(date)
       console.log(date)
       console.log("Values: ",motto," ",note)
 
+      const newCard = [{
+        date,
+        motto,
+        note,
+        id: Date.now(),
+        favourite: false,
+        }
+      ];
+
+      setCards(newCard);
+
       event.target.elements.motto.focus();
-      event.target.reset();
+
+    /*   setMotto('')
+      setNote('') */
   }
  
   return (<>
@@ -68,12 +87,12 @@ function App() {
         <AllEntries/>
       </StatusWrap>
 
-      <CardWrap>
-        <Card  
+      <CardWrap cards={cards}>
+        {/* <Card  
         motto={motto} 
         note={note}
         date={date}
-        />
+        /> */}
       </CardWrap>
     </MainWrap>
     <Footer/>

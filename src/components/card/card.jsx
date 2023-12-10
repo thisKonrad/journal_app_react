@@ -7,7 +7,7 @@ export default function Card({
     note
 }){
 
-    return(<div className="card">
+    return(<li className="card">
                 <img className ="card_icon" src="../assets/star.svg"></img>
                 <div><p className="date">date: <span>{date}</span></p></div>
                 <h3>{motto}</h3>
@@ -16,6 +16,6 @@ export default function Card({
                     {note}
                     </p>
                 </article>
-            </div>)
+            </li>)
 
 }
