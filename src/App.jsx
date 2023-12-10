@@ -19,30 +19,21 @@ function App() {
 
   const[motto, setMotto]= useState('');
   const[note, setNote]= useState('');
-  const[date, setDate]= useState('');
   const[cards,setCards]= useState([]);
-
 
   function handleCard(card){
     setCards((cards)=> [...cards, card])
+    console.log("handleCards: ",card)
   }
 
   function handleMotto(event) {
-
-    event.preventDefault();
-    let mottoValue = event.target.value;
-    console.log('note: ',mottoValue)
-
-    setMotto(mottoValue)
+    setMotto(event.target.value)
+    console.log('motto: ',motto)
   } 
 
   function handleNote(event) {
-
-    event.preventDefault();
-    let noteValue = event.target.value;
-    console.log('note: ',noteValue)
-
-    setNote(noteValue)
+    setNote(event.target.value)
+    console.log('note: ',note)
   }
 
   function handleSubmit(event){
@@ -50,24 +41,18 @@ function App() {
 
       if(!motto || !note){return}
 
-      setDate(new Date().toLocaleDateString())
-     
-      console.log(date)
-      console.log("Values: ",motto," ",note, " ",date)
-
       const newCard = [{
-        date:date,
-        motto:motto,
-        note:note,
+        date: new Date().toLocaleDateString(),
+        motto,
+        note,
         id: idTag,
-        favourite: false,
         }
       ];
 
       handleCard(newCard)
 
-      console.log(idTag)
-
+      console.log("idTag: ",idTag)
+      console.log("Submit values: motto:",motto,"note: ",note)
      /*  setMotto('')
       setNote('') */
       event.target.elements.motto.focus();
@@ -75,8 +60,7 @@ function App() {
 
  
   return (<>
-
-    <Header/>
+  <Header/>
     <MainWrap>
       <EntryForm 
       handleSubmit={handleSubmit}

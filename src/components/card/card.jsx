@@ -14,7 +14,7 @@ export default function Card({
                 <button   
                 className ="card_icon"
                 onClick={()=> setToggle((current)=>!current)}>
-                { toggle ?    <img src='../assets/star.svg'></img> :
+                { toggle ? <img src='../assets/star.svg'></img> :
                 <img src='../assets/star-filled.svg'></img> 
                 }
                 </button>
