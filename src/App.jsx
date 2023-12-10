@@ -19,7 +19,7 @@ function App() {
   const[date, setDate]= useState('');
   const[cards,setCards]= useState([]);
 
-  function handleCard(){
+  function handleCard(card){
     setCards((cards)=> [...cards, card])
   }
 
@@ -30,7 +30,6 @@ function App() {
     console.log('note: ',noteValue)
 
     setMotto(noteValue)
-    event.target.reset();
   } 
 
   function handleNote(event) {
@@ -40,7 +39,6 @@ function App() {
     console.log('note: ',noteValue)
 
     setNote(noteValue)
-    event.target.reset();
   } 
 
   function handleSubmit(event){
@@ -62,7 +60,7 @@ function App() {
         }
       ];
 
-      setCards(newCard);
+      handleCard(newCard)
 
       event.target.elements.motto.focus();
 
