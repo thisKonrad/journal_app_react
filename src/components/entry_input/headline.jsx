@@ -1,4 +1,4 @@
-import './entry_form.css'
+/* import './entry_form.css'
 
 export default function EntryFormHeadline(){
 
@@ -9,4 +9,4 @@ export default function EntryFormHeadline(){
         </>
     )
 
-}
+} */

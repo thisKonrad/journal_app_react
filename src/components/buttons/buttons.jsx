@@ -1,4 +1,4 @@
-import './button.css';
+/* import './button.css';
 
 
 export default function Button({sendValues}){
@@ -18,4 +18,4 @@ export default function Button({sendValues}){
         </>
     )
 
-}
+} */
