@@ -1,5 +1,5 @@
+/* eslint-disable react/prop-types */
 import './status.css'
-import CountAll from '../counters/countAll.jsx';
 
 
 export default function AllEntries({allEntries}){

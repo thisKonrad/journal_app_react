@@ -21,6 +21,7 @@ export default function App() {
   const[note, setNote]= useState('');
   const[cards, setCards]= useState([]);
   const[entries, setEntries]= useState(0);
+  const[favourites, setFavourites]= useState(0);
 
   function handleCard(card){
     setCards((cards)=> [...cards, card])
@@ -41,6 +42,26 @@ export default function App() {
     setEntries(entries +1)
   }
 
+
+  function handleToggle(id){
+    setCards((cards)=> cards.map((card)=>
+    card.id === id ? {...card,favourite: !card.favourite}
+    : card ))
+ 
+  }
+
+  function handleFavourites(){
+
+    const favouriteCards = cards.filter((card)=>
+    card.favourite === false);
+
+    console.log(favouriteCards.length())
+
+    setFavourites(favouriteCards.length());
+
+  }
+
+
   function handleSubmit(event){
       event.preventDefault()
 
@@ -51,6 +72,7 @@ export default function App() {
         note,
         date: new Date().toLocaleDateString(),
         id: idTag,
+        favourite: true
       };
 
       handleCard(newCard) 
@@ -74,10 +96,14 @@ export default function App() {
       handleNote={handleNote} 
       />
       <StatusWrap>
-        <Favourites/>
-        <AllEntries allEntries={entries}/>
+        <Favourites
+        allFavourites={handleFavourites}/>
+        <AllEntries 
+        allEntries={entries}/>
       </StatusWrap>
-      <CardWrap cards={cards}>
+      <CardWrap 
+      cards={cards} 
+      onToggle={handleToggle}>
       </CardWrap>
     </MainWrap>
     <Footer/>
