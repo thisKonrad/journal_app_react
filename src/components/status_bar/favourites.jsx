@@ -1,15 +1,14 @@
+/* eslint-disable react/prop-types */
 import './status.css'
-import CountFav from '../counters/countFav.jsx';
 
 
-export default function Favourites(){
+export default function Favourites({allFavourites}){
 
-    return( <>
+    return(<>
            <div>
-            <p className="favourites">favourites:<span>{CountFav}</span>
+            <p className="favourites">favourites:<span>{allFavourites}</span>
             </p>
             </div> 
-        </>
-    )
+        </>)
 
 }
