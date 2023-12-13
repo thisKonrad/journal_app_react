@@ -13,18 +13,18 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 
-function App() {
+export default function App() {
 
   let idTag = uuidv4();
 
   const[motto, setMotto]= useState('');
   const[note, setNote]= useState('');
-  const[cards,setCards]= useState([]);
+  const[cards, setCards]= useState([]);
 
   function handleCard(card){
     setCards((cards)=> [...cards, card])
-    console.log("handleCards: ",card)
-  }
+    console.log("CARDS: ",cards)
+  } 
 
   function handleMotto(event) {
     setMotto(event.target.value)
@@ -41,21 +41,21 @@ function App() {
 
       if(!motto || !note){return}
 
-      const newCard = [{
-        date: new Date().toLocaleDateString(),
+      const newCard = {
         motto,
         note,
+        date: new Date().toLocaleDateString(),
         id: idTag,
-        }
-      ];
+      };
 
-      handleCard(newCard)
+      handleCard(newCard) 
 
       console.log("idTag: ",idTag)
-      console.log("Submit values: motto:",motto,"note: ",note)
+     // console.log("Submit values: motto:",motto,"note: ",note, "date: ",date)
+      console.log("newCard: ",newCard);
      /*  setMotto('')
       setNote('') */
-      event.target.elements.motto.focus();
+      //event.target.elements.motto.focus();
   }
 
  
@@ -75,14 +75,9 @@ function App() {
         <AllEntries/>
       </StatusWrap>
 
-      <CardWrap cards={cards}
-     /*  cards={cards}
-      motto={motto}
-      note={note} */>
+      <CardWrap cards={cards}>
       </CardWrap>
     </MainWrap>
     <Footer/>
   </>)
 }
-
-export default App
