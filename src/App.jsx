@@ -50,11 +50,9 @@ export default function App() {
 
       handleCard(newCard) 
 
-      console.log("idTag: ",idTag)
-     // console.log("Submit values: motto:",motto,"note: ",note, "date: ",date)
       console.log("newCard: ",newCard);
-     /*  setMotto('')
-      setNote('') */
+      setMotto('')
+      setNote('')
       //event.target.elements.motto.focus();
   }
 
