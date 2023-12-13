@@ -20,6 +20,7 @@ export default function App() {
   const[motto, setMotto]= useState('');
   const[note, setNote]= useState('');
   const[cards, setCards]= useState([]);
+  const[entries, setEntries]= useState(0);
 
   function handleCard(card){
     setCards((cards)=> [...cards, card])
@@ -36,6 +37,10 @@ export default function App() {
     console.log('note: ',note)
   }
 
+  function handleEntries(){
+    setEntries(entries +1)
+  }
+
   function handleSubmit(event){
       event.preventDefault()
 
@@ -50,13 +55,14 @@ export default function App() {
 
       handleCard(newCard) 
 
+      handleEntries()
+
       console.log("newCard: ",newCard);
       setMotto('')
       setNote('')
-      //event.target.elements.motto.focus();
+      event.target.elements.motto.focus();
   }
 
- 
   return (<>
   <Header/>
     <MainWrap>
@@ -67,12 +73,10 @@ export default function App() {
       note={note}
       handleNote={handleNote} 
       />
-
       <StatusWrap>
         <Favourites/>
-        <AllEntries/>
+        <AllEntries allEntries={entries}/>
       </StatusWrap>
-
       <CardWrap cards={cards}>
       </CardWrap>
     </MainWrap>
