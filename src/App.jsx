@@ -21,7 +21,9 @@ export default function App() {
   const[note, setNote]= useState('');
   const[cards, setCards]= useState([]);
   const[entries, setEntries]= useState(0);
-  const[favourites, setFavourites]= useState(0);
+  //const[favourites, setFavourites]= useState(0);
+
+  let numberFav = 0;
 
   function handleCard(card){
     setCards((cards)=> [...cards, card])
@@ -31,39 +33,25 @@ export default function App() {
 
   function handleMotto(event) {
     setMotto(event.target.value)
-    //console.log('motto: ',motto)
   } 
 
   function handleNote(event) {
     setNote(event.target.value)
-    //console.log('note: ',note)
   }
-
-  function handleEntries(entry){
-    setEntries(entry.length)
-  }
-
-/*   function handleFavourites(card){
-    setFavourites(card.filter(
-      (card)=> card.favourite === false).length)
-  } */
 
 
   function handleToggle(id){
     
     setCards((cards)=> cards.map((card)=>
-    card.id === id ? {...card,favourite: !card.favourite}
+    card.id === id ? {...card,favourite: !card.favourite} 
     : card ))
 
   }
-
- /*  setFavourites((cards)=> cards.filter((card)=>
-  card.favourite).length */
-
  
-/*   console.log("favourites Length: ",favourites) */
-
-
+  /* setFavourites((cards)=> cards.favourites.length +1); */
+  numberFav = cards.filter((card)=> card.favourite === false).length;
+  console.log("cards Fav: ",numberFav);
+ 
   function handleSubmit(event){
       event.preventDefault()
 
@@ -78,10 +66,8 @@ export default function App() {
       };
 
       handleCard(newCard) 
-
-      handleEntries(cards)
-     // handleFavourites(newCard)
-
+      setEntries(cards.length +1)
+  
       setMotto('')
       setNote('')
       event.target.elements.motto.focus();
@@ -99,7 +85,7 @@ export default function App() {
       />
       <StatusWrap>
         <Favourites
-        allFavourites={favourites}/>
+        allFavourites={numberFav}/>
         <AllEntries 
         allEntries={entries}/>
       </StatusWrap>
