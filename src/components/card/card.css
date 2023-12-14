@@ -21,10 +21,10 @@
     margin-bottom: 0.4rem;
 }
 .date{
-    grid-area: 1/ 1/ 1/ 5;
+    grid-area: 1/ 2/ 1/ 5;
     display: flex;
     justify-content: center;
-    width: 400%;
+    width: 150%;
     color: black;
 }
 .card_icon{
@@ -42,6 +42,17 @@ h3{
     display: flex;
     justify-content: center;
     margin: 1rem;
+}
+
+.deleteBtn{
+    grid-area: 1/ 1/ 1/ 1;
+    cursor: pointer;
+    margin-right: 50%;
+    border: none;
+    background: transparent;
+}
+.deleteBtn:hover{
+    background:transparent;
 }
 
 article{
