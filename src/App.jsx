@@ -31,39 +31,23 @@ export default function App() {
 
   function handleMotto(event) {
     setMotto(event.target.value)
-    //console.log('motto: ',motto)
   } 
 
   function handleNote(event) {
     setNote(event.target.value)
-    //console.log('note: ',note)
   }
-
-  function handleEntries(entry){
-    setEntries(entry.length)
-  }
-
-/*   function handleFavourites(card){
-    setFavourites(card.filter(
-      (card)=> card.favourite === false).length)
-  } */
 
 
   function handleToggle(id){
     
     setCards((cards)=> cards.map((card)=>
-    card.id === id ? {...card,favourite: !card.favourite}
+    card.id === id ? {...card,favourite: !card.favourite} 
     : card ))
 
+    setFavourites((cards)=> cards.favourites.length +1);
   }
 
- /*  setFavourites((cards)=> cards.filter((card)=>
-  card.favourite).length */
-
  
-/*   console.log("favourites Length: ",favourites) */
-
-
   function handleSubmit(event){
       event.preventDefault()
 
@@ -78,10 +62,8 @@ export default function App() {
       };
 
       handleCard(newCard) 
-
-      handleEntries(cards)
-     // handleFavourites(newCard)
-
+      setEntries(cards.length +1)
+  
       setMotto('')
       setNote('')
       event.target.elements.motto.focus();
