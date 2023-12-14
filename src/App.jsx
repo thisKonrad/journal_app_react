@@ -26,40 +26,42 @@ export default function App() {
   function handleCard(card){
     setCards((cards)=> [...cards, card])
     console.log("CARDS: ",cards)
+    console.log("CARDS.length: ", cards)
   } 
 
   function handleMotto(event) {
     setMotto(event.target.value)
-    console.log('motto: ',motto)
+    //console.log('motto: ',motto)
   } 
 
   function handleNote(event) {
     setNote(event.target.value)
-    console.log('note: ',note)
+    //console.log('note: ',note)
   }
 
-  function handleEntries(){
-    setEntries(entries +1)
+  function handleEntries(entry){
+    setEntries(entry.length)
   }
+
+/*   function handleFavourites(card){
+    setFavourites(card.filter(
+      (card)=> card.favourite === false).length)
+  } */
 
 
   function handleToggle(id){
+    
     setCards((cards)=> cards.map((card)=>
     card.id === id ? {...card,favourite: !card.favourite}
     : card ))
+
+  }
+
+ /*  setFavourites((cards)=> cards.filter((card)=>
+  card.favourite).length */
+
  
-  }
-
-  function handleFavourites(){
-
-    const favouriteCards = cards.filter((card)=>
-    card.favourite === false);
-
-    console.log(favouriteCards.length())
-
-    setFavourites(favouriteCards.length());
-
-  }
+/*   console.log("favourites Length: ",favourites) */
 
 
   function handleSubmit(event){
@@ -77,9 +79,9 @@ export default function App() {
 
       handleCard(newCard) 
 
-      handleEntries()
+      handleEntries(cards)
+     // handleFavourites(newCard)
 
-      console.log("newCard: ",newCard);
       setMotto('')
       setNote('')
       event.target.elements.motto.focus();
@@ -97,7 +99,7 @@ export default function App() {
       />
       <StatusWrap>
         <Favourites
-        allFavourites={handleFavourites}/>
+        allFavourites={favourites}/>
         <AllEntries 
         allEntries={entries}/>
       </StatusWrap>
