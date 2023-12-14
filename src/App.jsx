@@ -21,7 +21,9 @@ export default function App() {
   const[note, setNote]= useState('');
   const[cards, setCards]= useState([]);
   const[entries, setEntries]= useState(0);
-  const[favourites, setFavourites]= useState(0);
+  //const[favourites, setFavourites]= useState(0);
+
+  let numberFav = 0;
 
   function handleCard(card){
     setCards((cards)=> [...cards, card])
@@ -44,9 +46,11 @@ export default function App() {
     card.id === id ? {...card,favourite: !card.favourite} 
     : card ))
 
-    setFavourites((cards)=> cards.favourites.length +1);
   }
-
+ 
+  /* setFavourites((cards)=> cards.favourites.length +1); */
+  numberFav = cards.filter((card)=> card.favourite === false).length;
+  console.log("cards Fav: ",numberFav);
  
   function handleSubmit(event){
       event.preventDefault()
@@ -81,7 +85,7 @@ export default function App() {
       />
       <StatusWrap>
         <Favourites
-        allFavourites={favourites}/>
+        allFavourites={numberFav}/>
         <AllEntries 
         allEntries={entries}/>
       </StatusWrap>
