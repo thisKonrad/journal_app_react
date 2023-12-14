@@ -1,10 +1,15 @@
 /* eslint-disable react/prop-types */
+import './button.css';
 import './card.css';
 
 
-export default function Card({card, onToggle}) {
+export default function Card({card, onToggle, onDelete}) {
 
     return(<li className="card">
+        <button
+        className="deleteBtn"
+        onClick={()=>onDelete(card.id)}
+        >X</button>
         <button   
             className ="card_icon"
             onClick={()=>onToggle(card.id)}>

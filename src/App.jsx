@@ -21,14 +21,13 @@ export default function App() {
   const[note, setNote]= useState('');
   const[cards, setCards]= useState([]);
   const[entries, setEntries]= useState(0);
-  //const[favourites, setFavourites]= useState(0);
 
   let numberFav = 0;
 
   function handleCard(card){
     setCards((cards)=> [...cards, card])
     console.log("CARDS: ",cards)
-    console.log("CARDS.length: ", cards)
+    console.log("CARDS.length: ",cards)
   } 
 
   function handleMotto(event) {
@@ -41,14 +40,17 @@ export default function App() {
 
 
   function handleToggle(id){
-    
     setCards((cards)=> cards.map((card)=>
     card.id === id ? {...card,favourite: !card.favourite} 
     : card ))
-
   }
- 
-  /* setFavourites((cards)=> cards.favourites.length +1); */
+
+  function handleDelete(id){
+    setCards((cards)=> cards.filter((card)=>
+    card.id !== id ))
+  }
+
+  /* favourites counter: */
   numberFav = cards.filter((card)=> card.favourite === false).length;
   console.log("cards Fav: ",numberFav);
  
@@ -91,6 +93,7 @@ export default function App() {
       </StatusWrap>
       <CardWrap 
       cards={cards} 
+      onDelete={handleDelete}
       onToggle={handleToggle}>
       </CardWrap>
     </MainWrap>
