@@ -1,6 +1,7 @@
 import './entry_form.css';
 import './input_textarea.css';
-import '../buttons/button.css';
+import './button.css';
+import './counters.css';
 
 export default function EntryForm({
     handleSubmit,

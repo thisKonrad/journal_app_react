@@ -7,7 +7,8 @@ export default function CardWrap({cards, onToggle, onDelete}){
 
     return(<section className="card_wrap">
         <ul>
-            {cards.map((card)=> <Card 
+            {cards.map((card)=> 
+            <Card 
             key={card.id} 
             card={card}
             onDelete={onDelete}

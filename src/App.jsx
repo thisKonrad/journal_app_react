@@ -45,15 +45,6 @@ export default function App() {
     : card ))
   }
 
-  function handleDelete(id){
-    setCards((cards)=> cards.filter((card)=>
-    card.id !== id ))
-  }
-
-  /* favourites counter: */
-  numberFav = cards.filter((card)=> card.favourite === false).length;
-  console.log("cards Fav: ",numberFav);
- 
   function handleSubmit(event){
       event.preventDefault()
 
@@ -74,6 +65,16 @@ export default function App() {
       setNote('')
       event.target.elements.motto.focus();
   }
+
+  function handleDelete(id){
+    setCards((cards)=> cards.filter((card)=>
+    card.id !== id ))
+    setEntries(cards.length -1)
+  }
+
+  /* favourites counter: */
+  numberFav = cards.filter((card)=> card.favourite === false).length;
+  
 
   return (<>
   <Header/>
